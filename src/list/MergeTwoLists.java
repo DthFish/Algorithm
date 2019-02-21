@@ -2,7 +2,7 @@ package list;
 
 /**
  * LeetCode 21
- * 合并两个有序链表：用哨岗（事先 new 的 head）简化逻辑
+ * 合并两个有序链表：用哨兵（事先 new 的 head）简化逻辑
  */
 public class MergeTwoLists {
 
