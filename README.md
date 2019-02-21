@@ -3,6 +3,7 @@ list 链表
 recursive 递归
 sort 排序
 stack 栈
+search 搜索
 ### 需要回顾
 1. 合并两条有序列表，需要用哨兵简化边际条件判断 MergeTwoLists
 2. 移除单链表倒数第几项，需要用哨兵简化边际条件判断 RemoveNthFromEnd
