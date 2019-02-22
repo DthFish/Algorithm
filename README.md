@@ -19,3 +19,5 @@ search 搜索
 10. 快速排序，选择排序，堆排序，希尔排序都是不稳定排序
 ![MenuDisplayView.gif](./res/sort.jpg)
 
+11. 二分查找的变形，需要多回顾 BinarySearchPlus
+
