@@ -11,7 +11,7 @@ search 搜索
 4. 冒泡和选择排序不要混淆了，插入排序记得插入的操作在位移操作之后（腾出插入的位置）
 5. 并归排序，快速排序多看看
 6. 用快排的分区思想在时间复杂度为 O(n) 里面找的第 K 大或小的数。
-7. 计数排序 CountingSort，不难理解，但是容易忘，需要多看看
+7. 计数排序 CountingSort，不难理解，但是容易忘，需要多看看，最后排序的时候从后往前排是为了保证算法稳定
 8. 桶排序，把数组按大小分成 n 个桶，桶内用快速排序.要求：
     a. 要排序的数据需要很容易就能划分成 m 个桶，桶与桶之间有着天然的大小顺序
     b. 数据在各个桶之间的分布是比较均匀
@@ -20,4 +20,16 @@ search 搜索
 ![MenuDisplayView.gif](./res/sort.jpg)
 
 11. 二分查找的变形，需要多回顾 BinarySearchPlus
-
+12. HashMap
+hash 算法
+~~~ java
+    static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    }
+~~~
+^ 运算是为了 hash 值里面有高位和低位的信息，
+计算 index 的方法, 因为 capacity 是 2 的整数次方，所以(capacity -1)最终是 00……0111……1 的类似的值，本质上 & 运算就是取余数
+~~~ java
+    int index = hash(key) & (capacity - 1);
+~~~
