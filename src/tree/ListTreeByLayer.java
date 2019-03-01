@@ -23,7 +23,7 @@ public class ListTreeByLayer {
         }
         TreeNode root = arr[1];
         layerOrder(root);
-
+        System.out.println("tree height:" + height(root));
     }
 
     public static void preOrder(TreeNode root) {
@@ -61,5 +61,13 @@ public class ListTreeByLayer {
                 list.offer(poll.right);
             }
         }
+    }
+
+    public static int height(TreeNode root) {
+        if (root == null) return -1;
+        int leftH = height(root.left) + 1;
+        int rightH = height(root.right) + 1;
+        return leftH > rightH ? leftH : rightH;
+
     }
 }
