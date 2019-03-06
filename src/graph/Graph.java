@@ -98,22 +98,19 @@ public class Graph {
     }
 
     private void dfsPart(int s, int t, int[] prev, boolean[] visited) {
-        if (found) return;
-        visited[s] = true;
         if (s == t) {
             found = true;
-            return;
         }
+        if (found) return;
+        visited[s] = true;
         for (int i = 0; i < adj[s].size(); i++) {
             int q = adj[s].get(i);
-
             if (!visited[q]) {
-                visited[q] = true;
                 prev[q] = s;
                 dfsPart(q, t, prev, visited);
+
             }
         }
-
     }
 
 }
