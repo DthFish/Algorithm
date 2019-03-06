@@ -5,6 +5,7 @@ import java.util.Arrays;
 /**
  * 堆排序：1. 先进行堆化；2. 然后堆顶移到最后算是排序完成，进一步对剩下的数据堆化
  * 注意：堆化过程中每次和节点交换的是左右子节点较大的那个
+ * 时间复杂度：O(nlogn)
  */
 public class HeapSort {
 
