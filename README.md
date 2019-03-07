@@ -33,3 +33,6 @@ hash 算法
 ~~~ java
     int index = hash(key) & (capacity - 1);
 ~~~
+13. BF 算法中的 BF 是 Brute Force 的缩写，中文叫作暴力匹配算法，也叫朴素匹配算法;
+RK 算法的全称叫 Rabin-Karp 算法，是由它的两位发明者 Rabin 和 Karp 的名字来命名的,是 BF 算法的升级版;
+BM（Boyer-Moore）算法,33 篇多看看;
