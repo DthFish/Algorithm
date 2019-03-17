@@ -67,12 +67,12 @@ public class DoubleNode {
     }
 
     private static void quickSort(DoubleNode head, DoubleNode tail) {
-        if (head == tail) {
+        if (head == tail || head == null || tail == null) {
             return;
         }
 
         DoubleNode point = quickSortPoint(head, tail);
-        quickSort(head, point);
+        quickSort(head, point.pre);
         quickSort(point.next, tail);
 
     }
@@ -83,13 +83,13 @@ public class DoubleNode {
         DoubleNode index = head;
         while (index != null && index != tail) {
             if (index.value < tail.value) {
-                if(point != index) {
+                if (point != index) {
                     DoubleNode temp = new DoubleNode(-1);
 
                     temp.next = point.next;
                     point.next = temp;
                     temp.pre = point;
-                    if(temp.next != null){
+                    if (temp.next != null) {
                         temp.next.pre = temp;
                     }
 
@@ -103,13 +103,16 @@ public class DoubleNode {
                         pre.next = index;
                     index.pre = pre;
                     index.next = next;
+                    next.pre = index;
+
                     if (indexPre != null)
                         indexPre.next = point;
-                    point.next = indexNext;
                     point.pre = indexPre;
+                    point.next = indexNext;
+                    indexNext.pre = point;
 
                     index.next = index.next.next;
-                    if(index.next != null){
+                    if (index.next != null) {
                         index.next.pre = index;
                     }
 
@@ -131,7 +134,7 @@ public class DoubleNode {
             temp.next = point.next;
             point.next = temp;
             temp.pre = point;
-            if(temp.next != null){
+            if (temp.next != null) {
                 temp.next.pre = temp;
             }
 
@@ -146,12 +149,16 @@ public class DoubleNode {
                 pre.next = tail;
             tail.pre = pre;
             tail.next = next;
-            tailPre.next = point;
-            point.next = tailNext;
+            next.pre = tail;
+            if (tailPre != null)
+                tailPre.next = point;
             point.pre = tailPre;
+            point.next = tailNext;
+            if (tailNext != null)
+                tailNext.pre = point;
 
             tail.next = tail.next.next;
-            if(tail.next != null){
+            if (tail.next != null) {
                 tail.next.pre = tail;
             }
 
