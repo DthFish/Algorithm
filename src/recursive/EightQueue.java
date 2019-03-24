@@ -22,7 +22,7 @@ public class EightQueue {
         for (int column = 0; column < 8; column++) {// 每一行都有 8 中放法
             if (isOk(row, column)) {// 有些放法不满足要求
                 result[row] = column;// 第 row 行的棋子放到了 column 列
-                eightQueue(row + 1);
+                eightQueue(row + 1);// 这里不能使用自增，因为 row 后续还要使用
             }
         }
 
