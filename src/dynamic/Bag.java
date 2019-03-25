@@ -11,6 +11,8 @@ public class Bag {
     private int bagWeight = 9;
     private boolean[][] memArray = new boolean[count][bagWeight + 1];
 
+    private int[] valueArr = {5, 4, 3, 2, 1};
+
     /**
      * 回溯算法 + 剪枝
      */
@@ -67,6 +69,9 @@ public class Bag {
         return 0;
     }
 
+    /**
+     * 动态规划，空间复杂度优化
+     */
     public static int find2(int[] weightArr, int count, int bagWeight) {
         boolean[] states = new boolean[bagWeight + 1]; // 特别注意数组长度是背包承重量 + 1
         states[0] = true;
@@ -86,6 +91,44 @@ public class Bag {
     }
 
 
+    public static int findValue(int[] weightArr, int[] valueArr, int count, int bagWeight) {
+        int[][] states = new int[count][bagWeight + 1];
+        for (int i = 0; i < count; i++) {
+            for (int j = 0; j < bagWeight; j++) {
+                states[i][j] = -1;
+            }
+        }
+
+        states[0][0] = 0;
+        states[0][weightArr[0]] = valueArr[0];
+        for (int i = 1; i < count; i++) {
+            for (int j = 0; j < bagWeight; j++) {
+                if (states[i - 1][j] >= 0) {
+                    states[i][j] = states[i - 1][j];
+                }
+            }
+
+            for (int j = 0; j < bagWeight - weightArr[i]; j++) {
+                if (states[i - 1][j] >= 0) {
+                    int v = states[i - 1][j] + valueArr[i];
+                    if (v > states[i][j + weightArr[i]]) {
+                        states[i][j + weightArr[i]] = v;
+                    }
+                }
+            }
+
+        }
+
+        int maxValue = -1;
+        for (int i = 0; i <= bagWeight; i++) {
+            if (states[count - 1][i] > maxValue) {
+                maxValue = states[count - 1][i];
+            }
+        }
+        return maxValue;
+    }
+
+
     public static void main(String[] args) {
         Bag bag = new Bag();
         bag.find(0, 0);
@@ -94,5 +137,6 @@ public class Bag {
 
         System.out.println(Bag.find(bag.weightArr, bag.count, bag.bagWeight));
         System.out.println(Bag.find2(bag.weightArr, bag.count, bag.bagWeight));
+        System.out.println(Bag.findValue(bag.weightArr, bag.valueArr, bag.count, bag.bagWeight));
     }
 }
