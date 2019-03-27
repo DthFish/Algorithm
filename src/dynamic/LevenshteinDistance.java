@@ -7,10 +7,10 @@ public class LevenshteinDistance {
     public static void main(String[] args) {
         char[] str1 = "mitcmu".toCharArray();
         char[] str2 = "mtacnu".toCharArray();
-        System.out.println(disance(str1, str1.length, str2, str2.length));
+        System.out.println(distance(str1, str1.length, str2, str2.length));
     }
 
-    public static int disance(char[] str1, int n, char[] str2, int m) {
+    public static int distance(char[] str1, int n, char[] str2, int m) {
         int[][] states = new int[n][m];
         for (int i = 0; i < m; i++) {
             if (str1[0] == str2[i]) {
