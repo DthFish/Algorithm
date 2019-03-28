@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class HeapSort {
 
     public static void main(String[] args) {
-        int[] arr = {-1, 4, 5, 6, 3, 2, 1};
+        int[] arr = {-1, 4, 5, 6, 3, 2, 1};//多加了一个 -1 是为了用数组表示堆的时候，角标满足 i*2 为左子节点的角标，i*2 + 1 为右子节点的角标
         heapSort(arr, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
