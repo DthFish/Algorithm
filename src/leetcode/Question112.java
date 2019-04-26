@@ -7,19 +7,13 @@ import tree.TreeNode;
  */
 public class Question112 {
 
-    private static boolean find = false;
-
     public static boolean hasPathSum(TreeNode root, int sum) {
 
-        if (find) {
-            return true;
-        }
         if (root == null) {
             return false;
         }
-        if(root.left == null && root.right == null && root.value == sum){
-            find = true;
-            return true;
+        if (root.left == null && root.right == null) {
+            return root.value == sum;
         }
         return hasPathSum(root.left, sum - root.value) || hasPathSum(root.right, sum - root.value);
     }
