@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * 给出二叉树的先序和中序遍历，还原二叉树
  */
-public class Question8 {
+public class Question7 {
 
     public static void main(String[] args) {
         int[] first = {4, 3, 2, 6, 8, 7, 9};
