@@ -6,7 +6,7 @@ import tree.TreeNode;
 import java.util.Arrays;
 
 /**
- * 给出二叉树的先序和中序遍历，还原二叉树
+ * 剑指 offer 7：给出二叉树的先序和中序遍历，还原二叉树
  */
 public class Question7 {
 
