@@ -5,6 +5,7 @@ import list.ListNode;
 
 /**
  * LeetCode 86. 分隔链表
+ * 思路1：见下代码实现，思路2：用两个头节点分别记录大于等于 x 和小于 x 的节点，拼接
  */
 public class Question86 {
 
