@@ -17,7 +17,7 @@ public class DoubleNode {
         if (this.next != null) {
             next = this.next.toString();
         }
-        return "value:" + value + "\r\nnext:" + next;*/
+        return "val:" + val + "\r\nnext:" + next;*/
         return String.valueOf(value);
 
     }

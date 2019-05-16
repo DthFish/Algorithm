@@ -8,19 +8,19 @@ public class MiddleNode {
 
     public static void main(String[] args) {
 
-        Node node = new Node(1);
-//        Node node1 = new Node(2);
-//        Node node2 = new Node(3);
+        ListNode node = new ListNode(1);
+//        ListNode node1 = new ListNode(2);
+//        ListNode node2 = new ListNode(3);
 //        node.next = node1;
 //        node1.next = node2;
 
-        Node.printAll(middleNode(node));
+        ListNode.printAll(middleNode(node));
 
     }
 
-    public static Node middleNode(Node head) {
-        Node slow = head;
-        Node fast = head;
+    public static ListNode middleNode(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
 
         while (fast != null && fast.next != null) {
             slow = slow.next;

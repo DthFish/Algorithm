@@ -6,7 +6,7 @@ package dynamic;
 public class Double11Advance {
 
     public static void double11Advance(int[] priceArr, int count, int value) {
-        boolean[][] states = new boolean[count][3 * value + 1];//超过 value 的 3 倍就没有价值了
+        boolean[][] states = new boolean[count][3 * value + 1];//超过 val 的 3 倍就没有价值了
         states[0][0] = true;
         states[0][priceArr[0]] = true;
         for (int i = 1; i < count; i++) {
@@ -27,7 +27,7 @@ public class Double11Advance {
 
         int j;
         for (j = value; j < 3 * value + 1; j++) {
-            if (states[count - 1][j]) break;//输出结果大于等于 value 的最小值
+            if (states[count - 1][j]) break;//输出结果大于等于 val 的最小值
         }
 
         if (j == 3 * value + 1) return;// 没有可行解

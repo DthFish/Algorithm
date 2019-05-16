@@ -7,25 +7,25 @@ package list;
  */
 public class RemoveNthFromEnd {
     public static void main(String[] args) {
-        Node node = new Node(1);
-        Node node1 = new Node(2);
-        Node node2 = new Node(3);
+        ListNode node = new ListNode(1);
+        ListNode node1 = new ListNode(2);
+        ListNode node2 = new ListNode(3);
         node.next = node1;
         node1.next = node2;
 
-        Node.printAll(removeNthFromEnd(node, 1));
+        ListNode.printAll(removeNthFromEnd(node, 1));
 
     }
 
-    public static Node removeNthFromEnd(Node head, int n) {
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
         if (head == null) {
             return null;
         }
-        Node tempHead = new Node(0);
+        ListNode tempHead = new ListNode(0);
         tempHead.next = head;
 
-        Node rangeStart = tempHead;
-        Node rangeEnd = tempHead;
+        ListNode rangeStart = tempHead;
+        ListNode rangeEnd = tempHead;
         //查找需要删除的节点的前一个节点
         for (int i = 0; i < n; i++) {
             rangeEnd = rangeEnd.next;

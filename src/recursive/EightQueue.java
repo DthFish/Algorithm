@@ -10,7 +10,7 @@ public class EightQueue {
         eightQueue(0);
     }
 
-    // index 表示行号，value 表示列号
+    // index 表示行号，val 表示列号
     private static int[] result = new int[8];
 
     public static void eightQueue(int row) {

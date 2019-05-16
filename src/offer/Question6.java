@@ -1,6 +1,6 @@
 package offer;
 
-import list.Node;
+import list.ListNode;
 
 /**
  * 剑指 offer 6：从尾到头打印链表
@@ -8,10 +8,10 @@ import list.Node;
 public class Question6 {
 
     public static void main(String[] args) {
-        Node head = new Node(0);
-        Node pre = head;
+        ListNode head = new ListNode(0);
+        ListNode pre = head;
         for (int i = 1; i < 10; i++) {
-            pre.next = new Node(i);
+            pre.next = new ListNode(i);
             pre = pre.next;
         }
         reversePrintList(head);
@@ -19,11 +19,11 @@ public class Question6 {
 
     }
 
-    private static void reversePrintList(Node head){
+    private static void reversePrintList(ListNode head){
         if(head == null){
             return;
         }
         reversePrintList(head.next);
-        System.out.println(head.value);
+        System.out.println(head.val);
     }
 }

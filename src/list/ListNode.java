@@ -1,13 +1,13 @@
 package list;
 
 @SuppressWarnings("WeakerAccess")
-public class Node {
-    public Node(int value) {
-        this.value = value;
+public class ListNode {
+    public ListNode(int val) {
+        this.val = val;
     }
 
-    public int value;
-    public Node next;
+    public int val;
+    public ListNode next;
 
     @Override
     public String toString() {
@@ -15,18 +15,18 @@ public class Node {
         if (this.next != null) {
             next = this.next.toString();
         }
-        return "value:" + value + "\r\nnext:" + next;*/
-        return String.valueOf(value);
+        return "val:" + val + "\r\nnext:" + next;*/
+        return String.valueOf(val);
     }
 
-    public static void printAll(Node node) {
+    public static void printAll(ListNode node) {
         if (node == null) {
             System.out.println("[null]");
             return;
         }
         System.out.print("[");
         while (node != null) {
-            System.out.print(node.value);
+            System.out.print(node.val);
             node = node.next;
             if (node != null) {
                 System.out.print(",");

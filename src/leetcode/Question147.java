@@ -1,6 +1,6 @@
 package leetcode;
 
-import list.Node;
+import list.ListNode;
 
 /**
  * leetcode 147. 对链表进行插入排序
@@ -8,30 +8,30 @@ import list.Node;
 public class Question147 {
 
     public static void main(String[] args) {
-        Node node1 = new Node(4);
-        Node node2 = new Node(2);
+        ListNode node1 = new ListNode(4);
+        ListNode node2 = new ListNode(2);
         node1.next = node2;
-        Node node3 = new Node(1);
+        ListNode node3 = new ListNode(1);
         node2.next = node3;
-        Node node4 = new Node(3);
+        ListNode node4 = new ListNode(3);
         node3.next = node4;
-        Node.printAll(insertionSortList(node1));
+        ListNode.printAll(insertionSortList(node1));
 
     }
 
-    public static Node insertionSortList(Node head) {
+    public static ListNode insertionSortList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        Node tempHead = new Node(-1);
+        ListNode tempHead = new ListNode(-1);
         tempHead.next = head;
-        Node current = head;
+        ListNode current = head;
         while (current.next != null) {
-            if (current.value > current.next.value) {
-                Node temp = current.next;
+            if (current.val > current.next.val) {
+                ListNode temp = current.next;
                 current.next = temp.next;
-                Node pre = tempHead;
-                while (pre.next.value < temp.value){
+                ListNode pre = tempHead;
+                while (pre.next.val < temp.val){
                     pre = pre.next;
                 }
                 temp.next = pre.next;
