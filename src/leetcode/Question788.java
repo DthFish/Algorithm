@@ -9,6 +9,7 @@ public class Question788 {
     public static void main(String[] args) {
         System.out.println(rotatedDigits(2));
         System.out.println(rotatedDigits(10));
+        System.out.println(rotatedDigits(9));
         System.out.println(rotatedDigits(1111));
     }
 
@@ -22,15 +23,6 @@ public class Question788 {
      */
     public static int rotatedDigits(int N) {
         int count = 0;
-        if (N < 10) {
-            for (int i = 1; i <= N; i++) {
-                if (sMap[i] > 0) {
-                    count++;
-                }
-            }
-            return count;
-        }
-
         for (int i = 1; i <= N; i++) {
             if (isGood(i)) {
                 count++;
