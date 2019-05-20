@@ -24,6 +24,8 @@ public class Question86 {
         node5.next = node6;
         ListNode.printAll(partition(node1,3));
 
+
+
     }
 
     /**
