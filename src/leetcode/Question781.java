@@ -10,7 +10,7 @@ public class Question781 {
         int[] answers2 = {1, 0, 1, 0, 0};//5
         int[] answers3 = {10, 10, 10};//11
         int[] answers4 = null;//0
-        int[] answers5 = {0,0,1,1,1};//6
+        int[] answers5 = {0, 0, 1, 1, 1};//6
         System.out.println(numRabbits(answers1));
         System.out.println(numRabbits(answers2));
         System.out.println(numRabbits(answers3));
@@ -40,12 +40,12 @@ public class Question781 {
         }
 
         int result = 0;
+        if (min == 0) {
+            result += counter[0];
+            min++;
+        }
         for (int i = min; i < counter.length; i++) {
-            if(i == 0){
-                result += counter[i];
-            }else {
-                result += counter[i] == 0 ? 0 : counter[i] <= i + 1 ? i + 1 : Math.ceil(counter[i] * 1.f / (i+1)) * (i + 1);
-            }
+            result += counter[i] == 0 ? 0 : counter[i] <= i + 1 ? i + 1 : Math.ceil(counter[i] * 1.f / (i + 1)) * (i + 1);
         }
 
         return result;
