@@ -26,50 +26,17 @@ public class Question187 {
         if (s == null || s.length() <= 10) {
             return new ArrayList<>();
         }
-        char[] charArray = s.toCharArray();
-        int[] values = new int[charArray.length - 9];
-
-        for (int i = 0; i <= 9; i++) {
-            values[0] = values[0] * 4 + getValue(charArray[i]);
-        }
-
-        for (int i = 1; i < charArray.length - 9; i++) {
-            values[i] = (values[i - 1] - getValue(charArray[i - 1]) * 262144) * 4 + getValue(charArray[i + 9]);
-        }
-
-        HashMap<Integer, Integer> set = new HashMap<>();
-        List<String> result = new ArrayList<>();
-        for (int i = 0; i < values.length; i++) {
-            if (set.containsKey(values[i])) {
-                Integer count = set.get(values[i]);
-                if (count == 1) {
-                    result.add(s.substring(i, i + 10));
-                }
-                set.put(values[i], 2);
-
-            } else {
-                set.put(values[i], 1);
+        Set<String> filter = new HashSet<>();
+        Set<String> result = new HashSet<>();
+        for (int i = 0; i < s.length() - 9; i++) {
+            String sub = s.substring(i, i + 10);
+            if (!filter.add(sub)) {
+                result.add(sub);
             }
-        }
 
-        return result;
+        }
+        return new ArrayList<>(result);
     }
 
-    public static int getValue(char c) {
-        int result = 0;
-        switch (c) {
-            case 'A':
-                break;
-            case 'C':
-                result = 1;
-                break;
-            case 'G':
-                result = 2;
-                break;
-            case 'T':
-                result = 3;
-                break;
-        }
-        return result;
-    }
+
 }
