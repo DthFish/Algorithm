@@ -13,9 +13,9 @@ public class Question112 {
             return false;
         }
         if (root.left == null && root.right == null) {
-            return root.value == sum;
+            return root.val == sum;
         }
-        return hasPathSum(root.left, sum - root.value) || hasPathSum(root.right, sum - root.value);
+        return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
     }
 
 }

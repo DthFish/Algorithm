@@ -30,7 +30,7 @@ public class Question98 {
     private static void addToList(TreeNode root, ArrayList<Integer> list) {
         if (root == null) return;
         addToList(root.left, list);
-        list.add(root.value);
+        list.add(root.val);
         addToList(root.right, list);
     }
 }

@@ -29,7 +29,7 @@ public class Question1 {
         three.left = two;
         two.left = one;
 
-        System.out.println(find(five,3).value);
+        System.out.println(find(five,3).val);
 
 
 

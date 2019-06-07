@@ -28,7 +28,7 @@ public class ListTreeByLayer {
 
     public static void preOrder(TreeNode root) {
         if (root == null) return;
-        System.out.println(root.value);
+        System.out.println(root.val);
         preOrder(root.left);
         preOrder(root.right);
     }
@@ -36,7 +36,7 @@ public class ListTreeByLayer {
     public static void inOrder(TreeNode root) {
         if (root == null) return;
         inOrder(root.left);
-        System.out.println(root.value);
+        System.out.println(root.val);
         inOrder(root.right);
     }
 
@@ -44,7 +44,7 @@ public class ListTreeByLayer {
         if (root == null) return;
         postOrder(root.left);
         postOrder(root.right);
-        System.out.println(root.value);
+        System.out.println(root.val);
     }
 
     public static void layerOrder(TreeNode root) {
@@ -53,7 +53,7 @@ public class ListTreeByLayer {
         list.offer(root);
         while (!list.isEmpty()) {
             TreeNode poll = list.poll();
-            System.out.println(poll.value);
+            System.out.println(poll.val);
             if (poll.left != null) {
                 list.offer(poll.left);
             }
