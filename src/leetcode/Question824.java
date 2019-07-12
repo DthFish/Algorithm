@@ -15,12 +15,26 @@ public class Question824 {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < split.length; i++) {
-            if (split[i].matches("[aeiouAEIOU][a-z_A-Z]*") || split[i].length() == 1) {
-                sb.append(split[i]).append("ma");
-            } else {
-                sb.append(split[i], 1, split[i].length())
-                        .append(split[i], 0, 1).append("ma");
+            switch (split[i].charAt(0)) {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                case 'A':
+                case 'E':
+                case 'I':
+                case 'O':
+                case 'U':
+                    sb.append(split[i]).append("ma");
+                    break;
+                default:
+                    sb.append(split[i], 1, split[i].length())
+                            .append(split[i], 0, 1).append("ma");
+                    break;
+
             }
+
             for (int j = 0; j <= i; j++) {
                 sb.append("a");
             }
