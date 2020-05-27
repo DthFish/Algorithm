@@ -3,6 +3,8 @@ package dynamic;
 /**
  * 硬币找零问题：动态规划
  * 硬币的面值分别为 1，3，5，我们要支付 9 元，需要最少的硬币数量
+ *
+ * 思路：f(x) = 1 + min(f(x - 1),f(x - 3),f(x - 5)
  */
 public class LeastCoin {
 
@@ -33,4 +35,5 @@ public class LeastCoin {
 
         return states[limit];
     }
+
 }
